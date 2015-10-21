@@ -76,7 +76,7 @@ end
 
 function getformattedLocalTime(area)
   if area == nil then
-    return "The time in nowhere is never"
+    return "The time in nowhere is never :)"
   end
 
   lat,lng,acc = get_latlong(area)

@@ -103,9 +103,9 @@ local function run(msg, matches)
     return save_cron(msg, matches[2])
 
   elseif isup(matches[1]) then
-    return matches[1]..' looks UP from here. 😃'
+    return matches[1]..' looks UP from here. 😃 Have a good day!'
   else
-    return matches[1]..' looks DOWN from here. 😱'
+    return matches[1]..' looks DOWN from here. 😱 Restart?'
   end
 end
 

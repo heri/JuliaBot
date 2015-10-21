@@ -9,7 +9,7 @@ local function save_cron(msg, text,date)
   local arr = { origin,  text } ;
   table.insert(cronned[date], arr)
   serialize_to_file(cronned, filename)
-  return 'Saved!'
+  return 'Saved by Julia!'
 end
 
 local function delete_cron(date)
@@ -24,7 +24,7 @@ end
 local function cron()
   for date, values in pairs(cronned) do
   	if date < os.time() then --time's up
-	  	send_msg(values[1][1], "eminder:"..values[1][2], ok_cb, false)
+	  	send_msg(values[1][1], "Reminder:"..values[1][2], ok_cb, false)
   		delete_cron(date) --TODO: Maybe check for something else? Like user
 	end
 

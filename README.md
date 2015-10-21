@@ -14,7 +14,7 @@ Julia is here to make your life easier:
 
 Julia is available 24/7 on Telegram to assist you in your needs.
 
-**WARNING** Work in progress, especially for the server management features. Remaining todos: chit-chat (machine learning), learning with set/get for info such as work and home info etc.
+**WARNING** *Work in progress, especially for the server management features. Remaining todos: chit-chat (machine learning), learning with set/get useful info such as work and home info for later computations*
 
 Requirements
 ------------
@@ -23,16 +23,18 @@ Requirements
 
 Install
 -------
-Install the following with apt-get or with brew `libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev make unzip git redis-server g++ libjansson-dev libpython-dev expat libexpat1-dev`. Then:
+Best on Ubuntu. It *could* work theorically on a mac for testing purposes
+
+Install the following with apt-get `libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev make unzip git redis-server g++ libjansson-dev libpython-dev expat libexpat1-dev`. Then:
 
 ```bash
 ./launch.sh install
 ./launch.sh
-$ sed -i "s/yourusername/$(whoami)/g" etc/telegram.conf
-$ sed -i "s_telegrambotpath_$(pwd)_g" etc/telegram.conf
-$ sudo cp etc/telegram.conf /etc/init/
-$ sudo start telegram # To start it
-$ sudo stop telegram # To stop it
+$ sed -i "s/yourusername/$(whoami)/g" etc/julia.conf # setting up julia as a service
+$ sed -i "s_telegrambotpath_$(pwd)_g" etc/julia.conf
+$ sudo cp etc/julia.conf /etc/init/
+$ sudo start julia # To start Julia!
+$ sudo stop julia
 ```
 
 
@@ -49,7 +51,7 @@ Bot Commands
   <tbody>
     <tr>
       <td>help</td>
-      <td>Help plugin. Get info from other plugins. </td>
+      <td>Julia Help. Get info from other plugins. </td>
       <td>!help: Show list of plugins.<br>!help all: Show all commands for every plugin.<br>!help [plugin name]: Commands for that plugin.<br></td>
     </tr>
     <tr>
@@ -84,12 +86,12 @@ Bot Commands
     </tr>
     <tr>
       <td>hackernews</td>
-      <td>Show top 7 hacker news (ycombinator.com)</td>
+      <td>Get Julia to show the top 5 hacker news (ycombinator.com)</td>
       <td>!hackernews</td>
     </tr>
     <tr>
       <td>imdb</td>
-      <td>IMDB plugin for Telegram</td>
+      <td>IMDB plugin</td>
       <td>!imdb [movie]</td>
     </tr>
     <tr>
